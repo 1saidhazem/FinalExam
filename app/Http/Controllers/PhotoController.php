@@ -30,7 +30,7 @@ class PhotoController extends Controller
 
     public function getAllUser()
     {
-        $users = User::all();  // with('Categories')->get()
+        $users = User::with('categories')->get();
         return response()->json($users);
     }
 

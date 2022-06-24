@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nameMovie');
             $table->date('showDateMovie');
             $table->unsignedBigInteger('category_id')->index()->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

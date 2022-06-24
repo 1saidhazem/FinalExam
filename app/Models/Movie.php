@@ -40,8 +40,4 @@ class Movie extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    public function movie_category(){
-        return $this->hasMany(Category::class,'category_id');
-    }
-
 }

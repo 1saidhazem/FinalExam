@@ -14,13 +14,13 @@ class cinemaMoviesController extends Controller
 {
     public function getMovies()
     {
-        $movies = Movie::all();   // with('movie_category')->get()
+        $movies = Movie::all();
         return response()->json($movies);
     }
 
     public function getCategories()
     {
-        $categories = Category::all(); // with('movies')->get()
+        $categories = Category::with('movies')->get();
         return response()->json($categories);
     }
 
